@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45D14DDB8B0005E67BE /* UIKit.framework */; };
+		675FB46014DDB8B0005E67BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45F14DDB8B0005E67BE /* Foundation.framework */; };
+		675FB46214DDB8B0005E67BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB46114DDB8B0005E67BE /* CoreGraphics.framework */; };
+		675FB46814DDB8B0005E67BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 675FB46614DDB8B0005E67BE /* InfoPlist.strings */; };
+		675FB46A14DDB8B0005E67BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 675FB46914DDB8B0005E67BE /* main.m */; };
+		675FB46E14DDB8B0005E67BE /* JWSMobileAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */; };
+		675FB47114DDB8B0005E67BE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */; };
+		675FB47414DDB8B0005E67BE /* JWSMobileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675FB47314DDB8B0005E67BE /* JWSMobileViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		675FB45914DDB8AF005E67BE /* JWS Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JWS Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		675FB45D14DDB8B0005E67BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		675FB45F14DDB8B0005E67BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		675FB46114DDB8B0005E67BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		675FB46514DDB8B0005E67BE /* JWS Mobile-Info.plist */ = {isa = PBXFileReference; path = "JWS Mobile-Info.plist"; sourceTree = "<group>"; };
+		675FB46714DDB8B0005E67BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		675FB46914DDB8B0005E67BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		675FB46B14DDB8B0005E67BE /* JWS Mobile-Prefix.pch */ = {isa = PBXFileReference; path = "JWS Mobile-Prefix.pch"; sourceTree = "<group>"; };
+		675FB46C14DDB8B0005E67BE /* JWSMobileAppDelegate.h */ = {isa = PBXFileReference; path = JWSMobileAppDelegate.h; sourceTree = "<group>"; };
+		675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWSMobileAppDelegate.m; sourceTree = "<group>"; };
+		675FB47014DDB8B0005E67BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		675FB47214DDB8B0005E67BE /* JWSMobileViewController.h */ = {isa = PBXFileReference; path = JWSMobileViewController.h; sourceTree = "<group>"; };
+		675FB47314DDB8B0005E67BE /* JWSMobileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWSMobileViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		675FB45614DDB8AF005E67BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */,
+				675FB46014DDB8B0005E67BE /* Foundation.framework in Frameworks */,
+				675FB46214DDB8B0005E67BE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		675FB44E14DDB8AF005E67BE = {
+			isa = PBXGroup;
+			children = (
+				675FB46314DDB8B0005E67BE /* JWS Mobile */,
+				675FB45C14DDB8AF005E67BE /* Frameworks */,
+				675FB45A14DDB8AF005E67BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		675FB45A14DDB8AF005E67BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				675FB45914DDB8AF005E67BE /* JWS Mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		675FB45C14DDB8AF005E67BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				675FB45D14DDB8B0005E67BE /* UIKit.framework */,
+				675FB45F14DDB8B0005E67BE /* Foundation.framework */,
+				675FB46114DDB8B0005E67BE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				675FB46C14DDB8B0005E67BE /* JWSMobileAppDelegate.h */,
+				675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */,
+				675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */,
+				675FB47214DDB8B0005E67BE /* JWSMobileViewController.h */,
+				675FB47314DDB8B0005E67BE /* JWSMobileViewController.m */,
+				675FB46414DDB8B0005E67BE /* Supporting Files */,
+			);
+			path = "JWS Mobile";
+			sourceTree = "<group>";
+		};
+		675FB46414DDB8B0005E67BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				675FB46514DDB8B0005E67BE /* JWS Mobile-Info.plist */,
+				675FB46614DDB8B0005E67BE /* InfoPlist.strings */,
+				675FB46914DDB8B0005E67BE /* main.m */,
+				675FB46B14DDB8B0005E67BE /* JWS Mobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		675FB45814DDB8AF005E67BE /* JWS Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 675FB47714DDB8B0005E67BE /* Build configuration list for PBXNativeTarget "JWS Mobile" */;
+			buildPhases = (
+				675FB45514DDB8AF005E67BE /* Sources */,
+				675FB45614DDB8AF005E67BE /* Frameworks */,
+				675FB45714DDB8AF005E67BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JWS Mobile";
+			productName = "JWS Mobile";
+			productReference = 675FB45914DDB8AF005E67BE /* JWS Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		675FB45014DDB8AF005E67BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "eberle & wollweber COMMUNICATIONS GmbH";
+			};
+			buildConfigurationList = 675FB45314DDB8AF005E67BE /* Build configuration list for PBXProject "JWS Mobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 675FB44E14DDB8AF005E67BE;
+			productRefGroup = 675FB45A14DDB8AF005E67BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				675FB45814DDB8AF005E67BE /* JWS Mobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		675FB45714DDB8AF005E67BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675FB46814DDB8B0005E67BE /* InfoPlist.strings in Resources */,
+				675FB47114DDB8B0005E67BE /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		675FB45514DDB8AF005E67BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675FB46A14DDB8B0005E67BE /* main.m in Sources */,
+				675FB46E14DDB8B0005E67BE /* JWSMobileAppDelegate.m in Sources */,
+				675FB47414DDB8B0005E67BE /* JWSMobileViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		675FB46614DDB8B0005E67BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				675FB46714DDB8B0005E67BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				675FB47014DDB8B0005E67BE /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		675FB47514DDB8B0005E67BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		675FB47614DDB8B0005E67BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		675FB47814DDB8B0005E67BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JWS Mobile/JWS Mobile-Prefix.pch";
+				INFOPLIST_FILE = "JWS Mobile/JWS Mobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		675FB47914DDB8B0005E67BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JWS Mobile/JWS Mobile-Prefix.pch";
+				INFOPLIST_FILE = "JWS Mobile/JWS Mobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		675FB45314DDB8AF005E67BE /* Build configuration list for PBXProject "JWS Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675FB47514DDB8B0005E67BE /* Debug */,
+				675FB47614DDB8B0005E67BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		675FB47714DDB8B0005E67BE /* Build configuration list for PBXNativeTarget "JWS Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675FB47814DDB8B0005E67BE /* Debug */,
+				675FB47914DDB8B0005E67BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 675FB45014DDB8AF005E67BE /* Project object */;
+}
