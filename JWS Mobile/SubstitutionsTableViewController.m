@@ -16,7 +16,7 @@
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse.name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = [NSPredicate predicateWithFormat:@"date.date = %@", self.day.date];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -45,7 +45,7 @@
     
     // Configure the cell...
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = substitution.klasse;
+    cell.textLabel.text = substitution.pos;
     cell.detailTextLabel.text = substitution.lehrer;
     
     return cell;

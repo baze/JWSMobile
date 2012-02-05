@@ -9,6 +9,7 @@
 #import "Substitution+JWS.h"
 #import "SubstitutionsFetcher.h"
 #import "Day+Create.h"
+#import "SchoolClass+Create.h"
 
 @implementation Substitution (JWS)
 
@@ -29,7 +30,8 @@
         substitution = [NSEntityDescription insertNewObjectForEntityForName:@"Substitution" 
                                               inManagedObjectContext:context];
         
-        substitution.klasse = [jwsInfo objectForKey:SUBSTITUTION_CLASS];
+        //substitution.klasse = [jwsInfo objectForKey:SUBSTITUTION_CLASS];
+        substitution.klasse = [SchoolClass schoolClassWithName:[jwsInfo objectForKey:SUBSTITUTION_CLASS] inManagedObjectContext:context];
         substitution.tag = [jwsInfo objectForKey:SUBSTITUTION_DAY];
         substitution.pos = [jwsInfo objectForKey:SUBSTITUTION_POS];
         substitution.lehrer = [jwsInfo objectForKey:SUBSTITUTION_TEACHER];

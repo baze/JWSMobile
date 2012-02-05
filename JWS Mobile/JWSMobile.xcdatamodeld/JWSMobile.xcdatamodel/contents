@@ -4,10 +4,13 @@
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="substitutions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Substitution" inverseName="date" inverseEntity="Substitution" syncable="YES"/>
     </entity>
+    <entity name="SchoolClass" representedClassName="SchoolClass" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="substitutions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Substitution" inverseName="klasse" inverseEntity="Substitution" syncable="YES"/>
+    </entity>
     <entity name="Substitution" representedClassName="Substitution" syncable="YES">
         <attribute name="fach" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="klasse" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lehrer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pos" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raum" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,9 +18,11 @@
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vlehrer" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="date" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="substitutions" inverseEntity="Day" syncable="YES"/>
+        <relationship name="klasse" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SchoolClass" inverseName="substitutions" inverseEntity="SchoolClass" syncable="YES"/>
     </entity>
     <elements>
         <element name="Day" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Substitution" positionX="340" positionY="225" width="128" height="195"/>
+        <element name="SchoolClass" positionX="520" positionY="189" width="128" height="75"/>
     </elements>
 </model>
