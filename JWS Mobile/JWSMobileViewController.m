@@ -7,54 +7,61 @@
 //
 
 #import "JWSMobileViewController.h"
+#import "SubstitutionsFetcher.h"
+#import "Substitution+JWS.h"
 
 @implementation JWSMobileViewController
 
-- (void)didReceiveMemoryWarning
+@synthesize substitutionDatabase = _substitutionDatabase;
+
+- (void)fetchSubstitutionDataIntoDocument:(UIManagedDocument *)document
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    dispatch_queue_t fetchQ = dispatch_queue_create("Substitution fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *substitutions = [SubstitutionsFetcher recentSubstitutions];
+        NSLog(@"%@", substitutions);
+        [document.managedObjectContext performBlock:^{
+            for (NSDictionary *jwsInfo in substitutions) {
+                [Substitution substitutionWithInfo:jwsInfo inManagedObjectContext:document.managedObjectContext];
+            } 
+        }];
+    });
+    dispatch_release(fetchQ);
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
+- (void)useDocument
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.substitutionDatabase.fileURL path]]) {
+        [self.substitutionDatabase saveToURL:self.substitutionDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+//            [self setupFetchedResultsController];
+            [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
+        }];
+    } else if (self.substitutionDatabase.documentState == UIDocumentStateClosed) {
+        [self.substitutionDatabase openWithCompletionHandler:^(BOOL success) {
+//            [self setupFetchedResultsController];
+        }];
+    } else if (self.substitutionDatabase.documentState == UIDocumentStateNormal) {
+//        [self setupFetchedResultsController];
+    }
 }
 
-- (void)viewDidUnload
+- (void)setSubstitutionDatabase:(UIManagedDocument *)substitutionDatabase
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    if (_substitutionDatabase != substitutionDatabase) {
+        _substitutionDatabase = substitutionDatabase;
+        [self useDocument];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    
+    if (!self.substitutionDatabase) {
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        url = [url URLByAppendingPathComponent:@"Default Substitution Database"];
+        self.substitutionDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
+    }
 }
 
 @end

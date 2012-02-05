@@ -10,4 +10,6 @@
 
 @interface JWSMobileViewController : UIViewController
 
+@property (nonatomic, strong) UIManagedDocument *substitutionDatabase;
+
 @end

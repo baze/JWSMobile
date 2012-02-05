@@ -7,9 +7,9 @@
 //
 
 #import "DaysTableViewController.h"
-#import "SubstitutionsFetcher.h"
+//#import "SubstitutionsFetcher.h"
 #import "Day.h"
-#import "Substitution+JWS.h"
+//#import "Substitution+JWS.h"
 
 
 @implementation DaysTableViewController
@@ -26,7 +26,7 @@
                                                                           sectionNameKeyPath:nil 
                                                                                    cacheName:nil];
 }
-
+/*
 - (void)fetchSubstitutionDataIntoDocument:(UIManagedDocument *)document
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Substitution fetcher", NULL);
@@ -40,13 +40,13 @@
     });
     dispatch_release(fetchQ);
 }
-
+*/
 - (void)useDocument
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.substitutionDatabase.fileURL path]]) {
         [self.substitutionDatabase saveToURL:self.substitutionDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             [self setupFetchedResultsController];
-            [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
+//            [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
         }];
     } else if (self.substitutionDatabase.documentState == UIDocumentStateClosed) {
         [self.substitutionDatabase openWithCompletionHandler:^(BOOL success) {
@@ -88,8 +88,19 @@
     // Configure the cell...
     Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = day.date;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungen", [day.substitutions count]];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([segue.destinationViewController respondsToSelector:@selector(setDay:)]) {
+        [segue.destinationViewController setDay:day];
+    }
+    
 }
 
 @end
