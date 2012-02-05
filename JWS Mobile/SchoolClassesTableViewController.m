@@ -64,14 +64,13 @@
     return cell;
 }
 
-/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([segue.destinationViewController respondsToSelector:@selector(setDay:)]) {
-        [segue.destinationViewController setDay:day];
+    SchoolClass *schoolClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([segue.destinationViewController respondsToSelector:@selector(setSchoolClass:)]) {
+        [segue.destinationViewController performSelector:@selector(setSchoolClass:) withObject:schoolClass];
     }
 }
-*/
+
 @end

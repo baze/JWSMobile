@@ -311,7 +311,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJQ-uc-fGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="LQx-j8-b9L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VPl-Hj-LZe"/>
+                    <tabBarItem key="tabBarItem" title="Vertretungsplan" id="VPl-Hj-LZe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MyH-hN-4G2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -402,21 +402,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgC-NN-CPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="1f0-L9-lP2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMb-sM-73f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Ato-vr-4tV">
+                                <rect key="frame" x="53" y="375" width="207" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="pAz-46-k5K">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Nmc-B3-s2m">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Sko-pb-boM">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="b8C-yB-htY">
-                                <rect key="frame" x="5" y="7" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Eq8-ix-gvF">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="iRX-sr-2BA">
+                                <rect key="frame" x="5" y="7" width="310" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Beatusstraße"/>
                                     <segment title="Finkenherd"/>
@@ -425,6 +435,7 @@
                             </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1043" y="624"/>
@@ -567,7 +578,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vertretungsplan" id="jku-kz-JZR">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="gGy-Lv-Zjh"/>
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="gGy-Lv-Zjh">
+                            <connections>
+                                <action selector="refresh:" destination="Nmq-mO-YUx" id="7jH-Ew-CGv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
             </objects>
@@ -577,7 +592,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGf-JM-G1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yfW-DF-Jeg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kpK-RS-8fe"/>
+                    <tabBarItem key="tabBarItem" title="Anfahrt" id="kpK-RS-8fe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XO8-93-zba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -595,7 +610,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dO6-Ja-NGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="l2p-5a-oVy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xt2-oq-ztI"/>
+                    <tabBarItem key="tabBarItem" title="Kontakt" id="xt2-oq-ztI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LWn-l4-7DJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -610,6 +625,29 @@
             <point key="canvasLocation" x="509" y="1268"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="DaysTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DaysTableViewController.h"/>
+        </class>
+        <class className="JWSMobileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSMobileViewController.h"/>
+        </class>
+        <class className="SchoolClassesTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolClassesTableViewController.h"/>
+        </class>
+        <class className="SubstitutionDetailsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionDetailsTableViewController.h"/>
+        </class>
+        <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>
+        </class>
+        <class className="SubstitutionsBySchoolClassTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsBySchoolClassTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

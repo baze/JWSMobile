@@ -9,7 +9,6 @@
 #import "DaysTableViewController.h"
 #import "Day.h"
 
-
 @implementation DaysTableViewController
 
 @synthesize substitutionDatabase = _substitutionDatabase;
@@ -70,7 +69,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([segue.destinationViewController respondsToSelector:@selector(setDay:)]) {
-        [segue.destinationViewController setDay:day];
+        [segue.destinationViewController performSelector:@selector(setDay:) withObject:day];
     }
 }
 

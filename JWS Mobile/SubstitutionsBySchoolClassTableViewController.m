@@ -15,8 +15,8 @@
 
 - (void)setupFetchedResultsController
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SchoolClass"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date.date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse.name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = [NSPredicate predicateWithFormat:@"klasse.name = %@", self.schoolClass.name];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -29,13 +29,14 @@
 {
     if (_schoolClass != schoolClass) {
         _schoolClass = schoolClass;
+         self.title = schoolClass.name;
         [self setupFetchedResultsController];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SchoolClass Cell";
+    static NSString *CellIdentifier = @"Substitution Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -44,7 +45,7 @@
     
     // Configure the cell...
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = substitution.pos;
+    cell.textLabel.text = substitution.klasse.name;
     cell.detailTextLabel.text = substitution.lehrer;
     
     return cell;

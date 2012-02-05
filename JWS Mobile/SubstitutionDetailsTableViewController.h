@@ -10,4 +10,6 @@
 
 @interface SubstitutionDetailsTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSDictionary *substitution;
+
 @end

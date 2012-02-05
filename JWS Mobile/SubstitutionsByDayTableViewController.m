@@ -51,4 +51,17 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
+        
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.lehrer, nil] 
+                                                                           forKeys:[NSArray arrayWithObjects:@"lehrer", nil]];
+        
+        [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
+    }
+}
+
 @end
