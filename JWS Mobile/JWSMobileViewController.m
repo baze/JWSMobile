@@ -33,15 +33,8 @@
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.substitutionDatabase.fileURL path]]) {
         [self.substitutionDatabase saveToURL:self.substitutionDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-//            [self setupFetchedResultsController];
             [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
         }];
-    } else if (self.substitutionDatabase.documentState == UIDocumentStateClosed) {
-        [self.substitutionDatabase openWithCompletionHandler:^(BOOL success) {
-//            [self setupFetchedResultsController];
-        }];
-    } else if (self.substitutionDatabase.documentState == UIDocumentStateNormal) {
-//        [self setupFetchedResultsController];
     }
 }
 
@@ -62,6 +55,14 @@
         url = [url URLByAppendingPathComponent:@"Default Substitution Database"];
         self.substitutionDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutionDatabase::)]) {
+        [segue.destinationViewController setSubstitutionDatabase:self.substitutionDatabase];
+    }
+    
 }
 
 @end

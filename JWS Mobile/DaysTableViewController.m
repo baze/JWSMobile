@@ -7,9 +7,7 @@
 //
 
 #import "DaysTableViewController.h"
-//#import "SubstitutionsFetcher.h"
 #import "Day.h"
-//#import "Substitution+JWS.h"
 
 
 @implementation DaysTableViewController
@@ -26,21 +24,7 @@
                                                                           sectionNameKeyPath:nil 
                                                                                    cacheName:nil];
 }
-/*
-- (void)fetchSubstitutionDataIntoDocument:(UIManagedDocument *)document
-{
-    dispatch_queue_t fetchQ = dispatch_queue_create("Substitution fetcher", NULL);
-    dispatch_async(fetchQ, ^{
-        NSArray *substitutions = [SubstitutionsFetcher recentSubstitutions];
-        [document.managedObjectContext performBlock:^{
-            for (NSDictionary *jwsInfo in substitutions) {
-                [Substitution substitutionWithInfo:jwsInfo inManagedObjectContext:document.managedObjectContext];
-            } 
-        }];
-    });
-    dispatch_release(fetchQ);
-}
-*/
+
 - (void)useDocument
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.substitutionDatabase.fileURL path]]) {
@@ -68,7 +52,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     if (!self.substitutionDatabase) {
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"Default Substitution Database"];
@@ -88,7 +71,7 @@
     // Configure the cell...
     Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = day.date;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungen", [day.substitutions count]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungsstunden", [day.substitutions count]];
     
     return cell;
 }
