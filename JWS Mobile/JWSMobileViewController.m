@@ -63,4 +63,30 @@
     }
 }
 
+
+- (void) deleteAllEntitiesForName:(NSString*)entityName {
+    NSManagedObjectContext *moc = self.substitutionDatabase.managedObjectContext;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName 
+                                                         inManagedObjectContext:moc];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    NSError *error = nil;
+    NSArray *array = [moc executeFetchRequest:request error:&error];
+    if (array != nil) {
+        for(NSManagedObject *managedObject in array) {
+            [moc deleteObject:managedObject];
+        }
+        error = nil;
+        [moc save:&error];
+    }
+}
+
+- (IBAction)refresh:(id)sender {
+    [self deleteAllEntitiesForName:@"Day"];
+    [self deleteAllEntitiesForName:@"Substitution"];
+    [self deleteAllEntitiesForName:@"SchoolClass"];
+    
+    [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
+}
+
 @end
