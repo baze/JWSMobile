@@ -1,23 +1,22 @@
 //
-//  DaysTableViewController.m
+//  SchoolClassesTableViewController.m
 //  JWS Mobile
 //
-//  Created by Björn Martensen on 04.02.12.
+//  Created by Björn Martensen on 05.02.12.
 //  Copyright (c) 2012 eberle & wollweber COMMUNICATIONS GmbH. All rights reserved.
 //
 
-#import "DaysTableViewController.h"
-#import "Day.h"
+#import "SchoolClassesTableViewController.h"
+#import "SchoolClass.h"
 
-
-@implementation DaysTableViewController
+@implementation SchoolClassesTableViewController
 
 @synthesize substitutionDatabase = _substitutionDatabase;
 
 - (void)setupFetchedResultsController
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SchoolClass"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.substitutionDatabase.managedObjectContext 
@@ -50,7 +49,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Day Cell";
+    static NSString *CellIdentifier = @"SchoolClass Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -58,13 +57,14 @@
     }
     
     // Configure the cell...
-    Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = day.date;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungsstunden", [day.substitutions count]];
+    SchoolClass *schoolClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = schoolClass.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungsstunden", [schoolClass.substitutions count]];
     
     return cell;
 }
 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
@@ -73,5 +73,5 @@
         [segue.destinationViewController setDay:day];
     }
 }
-
+*/
 @end

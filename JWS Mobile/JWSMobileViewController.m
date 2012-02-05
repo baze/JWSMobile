@@ -19,11 +19,10 @@
     dispatch_queue_t fetchQ = dispatch_queue_create("Substitution fetcher", NULL);
     dispatch_async(fetchQ, ^{
         NSArray *substitutions = [SubstitutionsFetcher recentSubstitutions];
-        NSLog(@"%@", substitutions);
         [document.managedObjectContext performBlock:^{
             for (NSDictionary *jwsInfo in substitutions) {
                 [Substitution substitutionWithInfo:jwsInfo inManagedObjectContext:document.managedObjectContext];
-            } 
+            }
         }];
     });
     dispatch_release(fetchQ);
@@ -59,10 +58,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutionDatabase::)]) {
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutionDatabase:)]) {
         [segue.destinationViewController setSubstitutionDatabase:self.substitutionDatabase];
     }
-    
 }
 
 @end
