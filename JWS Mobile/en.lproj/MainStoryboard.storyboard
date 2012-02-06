@@ -430,20 +430,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Nmc-B3-s2m">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Eq8-ix-gvF">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="iRX-sr-2BA">
-                                <rect key="frame" x="5" y="7" width="310" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Beatusstraße"/>
-                                    <segment title="Finkenherd"/>
-                                    <segment title="Karl-Härle-Straße"/>
-                                </segments>
-                            </segmentedControl>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Anfahrt" id="Nmc-B3-s2m"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="pAz-46-k5K" id="r3w-6Y-Kwd"/>
@@ -637,44 +624,6 @@
             <point key="canvasLocation" x="509" y="1268"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="DaysTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DaysTableViewController.h"/>
-        </class>
-        <class className="JWSMobileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSMobileViewController.h"/>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SchoolClassesTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolClassesTableViewController.h"/>
-        </class>
-        <class className="SubstitutionDetailsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionDetailsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="DatumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="InfoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="KlasseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LehrerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="PosLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="RaumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="VLehrerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>
-        </class>
-        <class className="SubstitutionsBySchoolClassTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsBySchoolClassTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
