@@ -45,7 +45,7 @@
     
     // Configure the cell...
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = substitution.pos;
+    cell.textLabel.text = [substitution valueForKeyPath:@"klasse.name"];
     cell.detailTextLabel.text = substitution.lehrer;
     
     return cell;
@@ -57,7 +57,7 @@
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
         
-        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.date.date, substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"datum", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.date.date, [substitution valueForKeyPath:@"klasse.name"], substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"datum", @"klasse", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
         
         [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
     }
