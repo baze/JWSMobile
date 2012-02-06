@@ -7,6 +7,7 @@
 //
 
 #import "JWSStandortAnnotation.h"
+#import "JWSSubstitutionsFetcher.h"
 
 @implementation JWSStandortAnnotation
 
@@ -17,6 +18,24 @@
     JWSStandortAnnotation *annotation = [[JWSStandortAnnotation alloc] init];
     annotation.standort = standort;
     return annotation;
+}
+
+- (NSString *)title
+{
+    return [self.standort objectForKey:STANDORT_TITLE];
+}
+
+- (NSString *)subtitle
+{
+    return [self.standort objectForKey:STANDORT_SUBTITLE];
+}
+
+- (CLLocationCoordinate2D)coordinate
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[self.standort valueForKeyPath:STANDORT_LATITUDE] doubleValue];
+    coordinate.longitude = [[self.standort valueForKeyPath:STANDORT_LONGITUDE] doubleValue];
+    return coordinate;
 }
 
 

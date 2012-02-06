@@ -19,6 +19,11 @@
 #define SUBSTITUTION_ID @"hash"
 #define SUBSTITUTION_DATE @"date"
 
+#define STANDORT_TITLE @"street"
+#define STANDORT_SUBTITLE @"type"
+#define STANDORT_LATITUDE @"coordinates.latitude"
+#define STANDORT_LONGITUDE @"coordinates.longitude"
+
 @interface JWSSubstitutionsFetcher : NSObject
 
 + (NSArray *)recentSubstitutions;
