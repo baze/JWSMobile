@@ -7,7 +7,7 @@
 //
 
 #import "Substitution+JWS.h"
-#import "SubstitutionsFetcher.h"
+#import "JWSSubstitutionsFetcher.h"
 #import "Day+Create.h"
 #import "SchoolClass+Create.h"
 

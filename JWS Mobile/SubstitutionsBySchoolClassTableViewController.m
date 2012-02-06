@@ -51,4 +51,16 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
+        
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.klasse.name, substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"klasse", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
+        
+        [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
+    }
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "JWSMobileViewController.h"
-#import "SubstitutionsFetcher.h"
+#import "JWSSubstitutionsFetcher.h"
 #import "Substitution+JWS.h"
 
 @implementation JWSMobileViewController
@@ -18,7 +18,7 @@
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Substitution fetcher", NULL);
     dispatch_async(fetchQ, ^{
-        NSArray *substitutions = [SubstitutionsFetcher recentSubstitutions];
+        NSArray *substitutions = [JWSSubstitutionsFetcher recentSubstitutions];
         [document.managedObjectContext performBlock:^{
             for (NSDictionary *jwsInfo in substitutions) {
                 [Substitution substitutionWithInfo:jwsInfo inManagedObjectContext:document.managedObjectContext];

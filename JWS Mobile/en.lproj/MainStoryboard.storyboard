@@ -303,6 +303,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="D7p-x1-OdA"/>
+                    <connections>
+                        <outlet property="DatumLabel" destination="7Kh-CX-jPL" id="ZpK-mQ-sIw"/>
+                        <outlet property="InfoLabel" destination="hEi-XX-Mgu" id="0uM-8n-BLc"/>
+                        <outlet property="KlasseLabel" destination="PDB-RJ-qMu" id="5L0-n2-D0g"/>
+                        <outlet property="LehrerLabel" destination="TkT-6J-9Ks" id="vbT-Gf-2sE"/>
+                        <outlet property="PosLabel" destination="4y2-k8-ufd" id="82N-9o-ssg"/>
+                        <outlet property="RaumLabel" destination="GLB-cI-hCI" id="ew7-UU-2Fs"/>
+                        <outlet property="VLehrerLabel" destination="hl3-zz-0Ma" id="vBt-Hb-j0g"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2339" y="-28"/>
@@ -400,7 +409,7 @@
         <scene sceneID="KFD-ST-4Cx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgC-NN-CPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="1f0-L9-lP2" sceneMemberID="viewController">
+                <viewController id="1f0-L9-lP2" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMb-sM-73f">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -436,6 +445,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="pAz-46-k5K" id="r3w-6Y-Kwd"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1043" y="624"/>
@@ -635,11 +647,26 @@
         <class className="JWSMobileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSMobileViewController.h"/>
         </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
         <class className="SchoolClassesTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolClassesTableViewController.h"/>
         </class>
         <class className="SubstitutionDetailsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionDetailsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="DatumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="InfoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="KlasseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LehrerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="PosLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="RaumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="VLehrerLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>

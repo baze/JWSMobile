@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 eberle & wollweber COMMUNICATIONS GmbH. All rights reserved.
 //
 
-#import "SubstitutionsFetcher.h"
+#import "JWSSubstitutionsFetcher.h"
 
-#define BASE_URL @"http://jws.bjoernmartensen.de/vplan/show/"
+#define BASE_URL @"http://jws.bjoernmartensen.de/api/"
 
-@implementation SubstitutionsFetcher
+@implementation JWSSubstitutionsFetcher
 
 + (NSArray *)executeSubstitutionsFetch:(NSString *)query
 {
@@ -25,7 +25,13 @@
 + (NSArray *)recentSubstitutions
 {
     //NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=500&license=1,2,4,7&has_geo=1&extras=original_format,tags,description,geo,date_upload,owner_name,place_url"];
-    NSString *request = [NSString stringWithFormat:@"%@", BASE_URL];
+    NSString *request = [NSString stringWithFormat:@"%@/vplan", BASE_URL];
+    return [self executeSubstitutionsFetch:request];
+}
+
++ (NSArray *)standorte
+{
+    NSString *request = [NSString stringWithFormat:@"%@/standorte", BASE_URL];
     return [self executeSubstitutionsFetch:request];
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6700CC7714DF24CD000B7550 /* JWSStandortAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */; };
+		6731330714DF1E8B00F3AECE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6731330614DF1E8B00F3AECE /* MapViewController.m */; };
 		675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45D14DDB8B0005E67BE /* UIKit.framework */; };
 		675FB46014DDB8B0005E67BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45F14DDB8B0005E67BE /* Foundation.framework */; };
 		675FB46214DDB8B0005E67BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB46114DDB8B0005E67BE /* CoreGraphics.framework */; };
@@ -24,7 +26,7 @@
 		678C114914DE9F4600476008 /* SubstitutionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678C114814DE9F4600476008 /* SubstitutionDetailsTableViewController.m */; };
 		6793EFB314DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6793EFB214DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m */; };
 		67B02B0F14DDB9780090E6C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */; };
-		67B02B1314DDB9870090E6C6 /* SubstitutionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1214DDB9870090E6C6 /* SubstitutionsFetcher.m */; };
+		67B02B1314DDB9870090E6C6 /* JWSSubstitutionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */; };
 		67B02B1614DDB9BE0090E6C6 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1514DDB9BE0090E6C6 /* DaysTableViewController.m */; };
 		67B02B1814DDBC7B0090E6C6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B02B1714DDBC7B0090E6C6 /* CoreData.framework */; };
 		67B02B1B14DDBD5C0090E6C6 /* JWSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1914DDBD5C0090E6C6 /* JWSMobile.xcdatamodeld */; };
@@ -35,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6700CC7514DF24CD000B7550 /* JWSStandortAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSStandortAnnotation.h; sourceTree = "<group>"; };
+		6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSStandortAnnotation.m; sourceTree = "<group>"; };
+		6731330514DF1E8B00F3AECE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		6731330614DF1E8B00F3AECE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		675FB45914DDB8AF005E67BE /* JWS Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JWS Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675FB45D14DDB8B0005E67BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		675FB45F14DDB8B0005E67BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,12 +66,12 @@
 		678C114514DE9B8100476008 /* SchoolClass+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SchoolClass+Create.m"; sourceTree = "<group>"; };
 		678C114714DE9F4600476008 /* SubstitutionDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstitutionDetailsTableViewController.h; sourceTree = "<group>"; };
 		678C114814DE9F4600476008 /* SubstitutionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionDetailsTableViewController.m; sourceTree = "<group>"; };
-		6793EFB114DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SubstitutionsBySchoolClassTableViewController.h; sourceTree = "<group>"; };
+		6793EFB114DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstitutionsBySchoolClassTableViewController.h; sourceTree = "<group>"; };
 		6793EFB214DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionsBySchoolClassTableViewController.m; sourceTree = "<group>"; };
 		67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		67B02B1114DDB9870090E6C6 /* SubstitutionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstitutionsFetcher.h; sourceTree = "<group>"; };
-		67B02B1214DDB9870090E6C6 /* SubstitutionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionsFetcher.m; sourceTree = "<group>"; };
+		67B02B1114DDB9870090E6C6 /* JWSSubstitutionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; path = JWSSubstitutionsFetcher.h; sourceTree = "<group>"; };
+		67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSSubstitutionsFetcher.m; sourceTree = "<group>"; };
 		67B02B1414DDB9BE0090E6C6 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaysTableViewController.h; sourceTree = "<group>"; };
 		67B02B1514DDB9BE0090E6C6 /* DaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaysTableViewController.m; sourceTree = "<group>"; };
 		67B02B1714DDBC7B0090E6C6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -133,6 +139,10 @@
 				675FB46C14DDB8B0005E67BE /* JWSMobileAppDelegate.h */,
 				675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */,
 				675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */,
+				6731330514DF1E8B00F3AECE /* MapViewController.h */,
+				6731330614DF1E8B00F3AECE /* MapViewController.m */,
+				6700CC7514DF24CD000B7550 /* JWSStandortAnnotation.h */,
+				6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */,
 				678C114714DE9F4600476008 /* SubstitutionDetailsTableViewController.h */,
 				678C114814DE9F4600476008 /* SubstitutionDetailsTableViewController.m */,
 				67B02B3A14DDD3B20090E6C6 /* SubstitutionsByDayTableViewController.h */,
@@ -158,8 +168,8 @@
 				67B02B2C14DDC0050090E6C6 /* Substitution+JWS.m */,
 				675FB47214DDB8B0005E67BE /* JWSMobileViewController.h */,
 				675FB47314DDB8B0005E67BE /* JWSMobileViewController.m */,
-				67B02B1114DDB9870090E6C6 /* SubstitutionsFetcher.h */,
-				67B02B1214DDB9870090E6C6 /* SubstitutionsFetcher.m */,
+				67B02B1114DDB9870090E6C6 /* JWSSubstitutionsFetcher.h */,
+				67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */,
 				67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */,
 				67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */,
 				675FB46414DDB8B0005E67BE /* Supporting Files */,
@@ -245,7 +255,7 @@
 				675FB46E14DDB8B0005E67BE /* JWSMobileAppDelegate.m in Sources */,
 				675FB47414DDB8B0005E67BE /* JWSMobileViewController.m in Sources */,
 				67B02B0F14DDB9780090E6C6 /* CoreDataTableViewController.m in Sources */,
-				67B02B1314DDB9870090E6C6 /* SubstitutionsFetcher.m in Sources */,
+				67B02B1314DDB9870090E6C6 /* JWSSubstitutionsFetcher.m in Sources */,
 				67B02B1614DDB9BE0090E6C6 /* DaysTableViewController.m in Sources */,
 				67B02B1B14DDBD5C0090E6C6 /* JWSMobile.xcdatamodeld in Sources */,
 				67B02B2A14DDBF310090E6C6 /* Day+Create.m in Sources */,
@@ -258,6 +268,8 @@
 				678C114914DE9F4600476008 /* SubstitutionDetailsTableViewController.m in Sources */,
 				67C4FD6F14DEA53300FE7B75 /* SchoolClassesTableViewController.m in Sources */,
 				6793EFB314DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m in Sources */,
+				6731330714DF1E8B00F3AECE /* MapViewController.m in Sources */,
+				6700CC7714DF24CD000B7550 /* JWSStandortAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

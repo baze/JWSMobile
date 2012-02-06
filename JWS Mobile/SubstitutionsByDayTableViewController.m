@@ -57,8 +57,7 @@
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
         
-        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.lehrer, nil] 
-                                                                           forKeys:[NSArray arrayWithObjects:@"lehrer", nil]];
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.date.date, substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"datum", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
         
         [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
     }

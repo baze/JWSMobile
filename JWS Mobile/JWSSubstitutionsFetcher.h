@@ -19,8 +19,9 @@
 #define SUBSTITUTION_ID @"hash"
 #define SUBSTITUTION_DATE @"date"
 
-@interface SubstitutionsFetcher : NSObject
+@interface JWSSubstitutionsFetcher : NSObject
 
 + (NSArray *)recentSubstitutions;
++ (NSArray *)standorte;
 
 @end
