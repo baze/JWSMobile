@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AB4365114E18032001A135B /* julius_wegeler_schule.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4365014E18032001A135B /* julius_wegeler_schule.png */; };
 		2AE5612A14E15FED00DC897A /* standorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE5612914E15FED00DC897A /* standorte.plist */; };
+		2AE5613114E176B700DC897A /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE5613014E176B600DC897A /* ContactViewController.m */; };
 		6700CC7714DF24CD000B7550 /* JWSStandortAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */; };
 		6731330714DF1E8B00F3AECE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6731330614DF1E8B00F3AECE /* MapViewController.m */; };
 		675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45D14DDB8B0005E67BE /* UIKit.framework */; };
@@ -38,7 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AB4365014E18032001A135B /* julius_wegeler_schule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = julius_wegeler_schule.png; sourceTree = "<group>"; };
 		2AE5612914E15FED00DC897A /* standorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = standorte.plist; sourceTree = "<group>"; };
+		2AE5612F14E176B600DC897A /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		2AE5613014E176B600DC897A /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		6700CC7514DF24CD000B7550 /* JWSStandortAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSStandortAnnotation.h; sourceTree = "<group>"; };
 		6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSStandortAnnotation.m; sourceTree = "<group>"; };
 		6731330514DF1E8B00F3AECE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -138,10 +143,13 @@
 		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				2AB4365014E18032001A135B /* julius_wegeler_schule.png */,
 				2AE5612914E15FED00DC897A /* standorte.plist */,
 				675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */,
 				6731330514DF1E8B00F3AECE /* MapViewController.h */,
 				6731330614DF1E8B00F3AECE /* MapViewController.m */,
+				2AE5612F14E176B600DC897A /* ContactViewController.h */,
+				2AE5613014E176B600DC897A /* ContactViewController.m */,
 				6700CC7514DF24CD000B7550 /* JWSStandortAnnotation.h */,
 				6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */,
 				678C114714DE9F4600476008 /* SubstitutionDetailsTableViewController.h */,
@@ -245,6 +253,7 @@
 				675FB46814DDB8B0005E67BE /* InfoPlist.strings in Resources */,
 				675FB47114DDB8B0005E67BE /* MainStoryboard.storyboard in Resources */,
 				2AE5612A14E15FED00DC897A /* standorte.plist in Resources */,
+				2AB4365114E18032001A135B /* julius_wegeler_schule.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +283,7 @@
 				6793EFB314DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m in Sources */,
 				6731330714DF1E8B00F3AECE /* MapViewController.m in Sources */,
 				6700CC7714DF24CD000B7550 /* JWSStandortAnnotation.m in Sources */,
+				2AE5613114E176B700DC897A /* ContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
