@@ -46,18 +46,19 @@
 
 - (void)fetchStandorte
 {
-    dispatch_queue_t fetchQ = dispatch_queue_create("Standort fetcher", NULL);
-    dispatch_async(fetchQ, ^{
-        NSArray *standorte = [JWSSubstitutionsFetcher standorte];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"standorte" ofType:@"plist"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSArray *standorte = [NSArray arrayWithContentsOfFile:filePath];
+        
         NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:standorte.count];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            for (NSDictionary *standort in standorte) {
-                [annotations addObject:[JWSStandortAnnotation annotationForStandort:standort]];
-            }
-            [self.mapView addAnnotations:annotations];
-        });
-    });
-    dispatch_release(fetchQ);
+        
+        for (NSDictionary *standort in standorte) {
+            [annotations addObject:[JWSStandortAnnotation annotationForStandort:standort]];
+        }
+        
+        [self.mapView addAnnotations:annotations];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

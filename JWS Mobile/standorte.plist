@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>city</key>
+		<string>Koblenz</string>
+		<key>coordinates</key>
+		<dict>
+			<key>latitude</key>
+			<string>50.350801</string>
+			<key>longitude</key>
+			<string>7.564444</string>
+		</dict>
+		<key>phone</key>
+		<string>0261 9417 -00 oder -131</string>
+		<key>street</key>
+		<string>Beatusstraße 143-147</string>
+		<key>type</key>
+		<string>Haupthaus</string>
+		<key>zip</key>
+		<string>56073</string>
+	</dict>
+	<dict>
+		<key>city</key>
+		<string>Koblenz</string>
+		<key>coordinates</key>
+		<dict>
+			<key>latitude</key>
+			<string>50.345721</string>
+			<key>longitude</key>
+			<string>7.578694</string>
+		</dict>
+		<key>phone</key>
+		<string>0261 20025120</string>
+		<key>street</key>
+		<string>Finkenherd 4</string>
+		<key>type</key>
+		<string>Außenstelle</string>
+		<key>zip</key>
+		<string>56075</string>
+	</dict>
+	<dict>
+		<key>city</key>
+		<string>Koblenz</string>
+		<key>coordinates</key>
+		<dict>
+			<key>latitude</key>
+			<string>50.338154</string>
+			<key>longitude</key>
+			<string>7.577428</string>
+		</dict>
+		<key>phone</key>
+		<string>0261 2961650</string>
+		<key>street</key>
+		<string>Karl-Härle-Straße 1-5</string>
+		<key>type</key>
+		<string>Außenstelle</string>
+		<key>zip</key>
+		<string>56075</string>
+	</dict>
+</array>
+</plist>

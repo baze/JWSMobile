@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AE5612A14E15FED00DC897A /* standorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE5612914E15FED00DC897A /* standorte.plist */; };
 		6700CC7714DF24CD000B7550 /* JWSStandortAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */; };
 		6731330714DF1E8B00F3AECE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6731330614DF1E8B00F3AECE /* MapViewController.m */; };
 		675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45D14DDB8B0005E67BE /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AE5612914E15FED00DC897A /* standorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = standorte.plist; sourceTree = "<group>"; };
 		6700CC7514DF24CD000B7550 /* JWSStandortAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSStandortAnnotation.h; sourceTree = "<group>"; };
 		6700CC7614DF24CD000B7550 /* JWSStandortAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSStandortAnnotation.m; sourceTree = "<group>"; };
 		6731330514DF1E8B00F3AECE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		6793EFB214DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionsBySchoolClassTableViewController.m; sourceTree = "<group>"; };
 		67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		67B02B1114DDB9870090E6C6 /* JWSSubstitutionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; path = JWSSubstitutionsFetcher.h; sourceTree = "<group>"; };
+		67B02B1114DDB9870090E6C6 /* JWSSubstitutionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSSubstitutionsFetcher.h; sourceTree = "<group>"; };
 		67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSSubstitutionsFetcher.m; sourceTree = "<group>"; };
 		67B02B1414DDB9BE0090E6C6 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaysTableViewController.h; sourceTree = "<group>"; };
 		67B02B1514DDB9BE0090E6C6 /* DaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaysTableViewController.m; sourceTree = "<group>"; };
@@ -136,8 +138,7 @@
 		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				675FB46C14DDB8B0005E67BE /* JWSMobileAppDelegate.h */,
-				675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */,
+				2AE5612914E15FED00DC897A /* standorte.plist */,
 				675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */,
 				6731330514DF1E8B00F3AECE /* MapViewController.h */,
 				6731330614DF1E8B00F3AECE /* MapViewController.m */,
@@ -180,6 +181,8 @@
 		675FB46414DDB8B0005E67BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				675FB46C14DDB8B0005E67BE /* JWSMobileAppDelegate.h */,
+				675FB46D14DDB8B0005E67BE /* JWSMobileAppDelegate.m */,
 				675FB46514DDB8B0005E67BE /* JWS Mobile-Info.plist */,
 				675FB46614DDB8B0005E67BE /* InfoPlist.strings */,
 				675FB46914DDB8B0005E67BE /* main.m */,
@@ -241,6 +244,7 @@
 			files = (
 				675FB46814DDB8B0005E67BE /* InfoPlist.strings in Resources */,
 				675FB47114DDB8B0005E67BE /* MainStoryboard.storyboard in Resources */,
+				2AE5612A14E15FED00DC897A /* standorte.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
