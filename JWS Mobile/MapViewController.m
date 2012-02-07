@@ -44,28 +44,30 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)fetchStandorte
+- (NSArray *)annotations
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"standorte" ofType:@"plist"];
+    
+    NSMutableArray *annotations = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSArray *standorte = [NSArray arrayWithContentsOfFile:filePath];
         
-        NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:standorte.count];
+        annotations = [NSMutableArray arrayWithCapacity:standorte.count];
         
         for (NSDictionary *standort in standorte) {
             [annotations addObject:[JWSStandortAnnotation annotationForStandort:standort]];
         }
-        
-        [self.mapView addAnnotations:annotations];
     }
+    
+    return annotations;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
-    [self fetchStandorte];
+    [self.mapView addAnnotations:[self annotations]];
 }
 
 @end
