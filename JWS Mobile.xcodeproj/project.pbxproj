@@ -40,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A86C31714E3BBB10002B0B2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2AB4365014E18032001A135B /* julius_wegeler_schule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = julius_wegeler_schule.png; sourceTree = "<group>"; };
 		2AE5612914E15FED00DC897A /* standorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = standorte.plist; sourceTree = "<group>"; };
 		2AE5612F14E176B600DC897A /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		675FB44E14DDB8AF005E67BE = {
 			isa = PBXGroup;
 			children = (
+				2A86C31714E3BBB10002B0B2 /* CoreImage.framework */,
 				678C113014DE95C700476008 /* CoreLocation.framework */,
 				678C112E14DE95C000476008 /* MapKit.framework */,
 				67B02B1714DDBC7B0090E6C6 /* CoreData.framework */,
