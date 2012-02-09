@@ -66,8 +66,23 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     [self.mapView addAnnotations:[self annotations]];
+    
+    if (self.annotations.count) {
+        JWSStandortAnnotation *annotation = [self.annotations objectAtIndex:0];
+        MKCoordinateRegion region;
+        region.center = annotation.coordinate;
+        
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.05;
+        span.longitudeDelta = 0.05;
+        region.span = span;
+    
+        [self.mapView setRegion:region animated:YES];
+    }
+    
 }
+
 
 @end
