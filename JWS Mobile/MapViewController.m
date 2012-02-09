@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "JWSSubstitutionsFetcher.h"
 #import "JWSStandortAnnotation.h"
+#import "ContactViewController.h"
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
@@ -81,8 +82,49 @@
     
         [self.mapView setRegion:region animated:YES];
     }
-    
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.mapView.delegate = self;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
+    if (!aView) {
+        aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
+        aView.canShowCallout = YES;
+        
+        UIButton *disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        aView.rightCalloutAccessoryView = disclosureButton;
+        
+        aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    }
+    aView.annotation = annotation;
+    [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
+    
+    return aView;
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    UIImage *image = nil;
+    [(UIImageView *)view.leftCalloutAccessoryView setImage:image];
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if (![view.annotation isKindOfClass:[JWSStandortAnnotation class]])
+        return;
+    
+    NSDictionary *standort = nil;
+    
+    ContactViewController *viewController = [[ContactViewController alloc] init];
+    viewController.standort = standort;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 @end

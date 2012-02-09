@@ -346,7 +346,6 @@
                     <connections>
                         <segue destination="LQx-j8-b9L" kind="relationship" relationship="viewControllers" id="IaF-Q6-lEz"/>
                         <segue destination="yfW-DF-Jeg" kind="relationship" relationship="viewControllers" id="Iuh-Ai-6w4"/>
-                        <segue destination="l2p-5a-oVy" kind="relationship" relationship="viewControllers" id="UpK-Ck-gj7"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -540,7 +539,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGf-JM-G1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yfW-DF-Jeg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Anfahrt" id="kpK-RS-8fe"/>
+                    <tabBarItem key="tabBarItem" title="Anfahrt &amp; Kontakt" id="kpK-RS-8fe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XO8-93-zba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -554,83 +553,8 @@
             </objects>
             <point key="canvasLocation" x="517" y="624"/>
         </scene>
-        <scene sceneID="uMO-Qf-kFU">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dO6-Ja-NGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="l2p-5a-oVy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Kontakt" id="xt2-oq-ztI"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LWn-l4-7DJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bjw-yu-OVL" kind="relationship" relationship="rootViewController" id="328-oN-CjF"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="509" y="1268"/>
-        </scene>
-        <scene sceneID="gtR-UQ-fqK">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwj-ae-Cqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="bjw-yu-OVL" customClass="ContactViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IvF-um-2P6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="c7R-eO-oDY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="oJ9-4a-02c">
-                                <rect key="frame" x="20" y="184" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="0ML-MW-2Ov">
-                                <rect key="frame" x="20" y="213" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="q9L-By-3b7">
-                                <rect key="frame" x="20" y="271" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="imV-QE-q5F">
-                                <rect key="frame" x="20" y="300" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Kontakt" id="teh-hQ-Qyl"/>
-                    <connections>
-                        <outlet property="imageView" destination="c7R-eO-oDY" id="ZwC-Qb-cwJ"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="929" y="1268"/>
-        </scene>
     </scenes>
     <classes>
-        <class className="ContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
         </class>
