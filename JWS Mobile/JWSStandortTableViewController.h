@@ -1,15 +1,14 @@
 //
-//  ContactViewController.h
+//  JWSStandortTableViewController.h
 //  JWS Mobile
 //
-//  Created by Björn Martensen on 07.02.12.
+//  Created by Björn Martensen on 10.02.12.
 //  Copyright (c) 2012 eberle & wollweber COMMUNICATIONS GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ContactViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface JWSStandortTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSDictionary *standort;
 

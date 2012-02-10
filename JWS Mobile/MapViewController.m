@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 #import "JWSStandortAnnotation.h"
-#import "ContactViewController.h"
+#import "JWSStandortViewController.h"
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
@@ -119,8 +119,8 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    UIImage *image = nil;
-    [(UIImageView *)view.leftCalloutAccessoryView setImage:image];
+  //  UIImage *image = nil;
+  //  [(UIImageView *)view.leftCalloutAccessoryView setImage:image];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -128,10 +128,10 @@
     if (![view.annotation isKindOfClass:[JWSStandortAnnotation class]])
         return;
     
-    NSDictionary *standort = nil;
+    JWSStandortAnnotation *annotation = (JWSStandortAnnotation *)view.annotation;
     
-    ContactViewController *viewController = [[ContactViewController alloc] init];
-    viewController.standort = standort;
+    JWSStandortViewController *viewController = [[JWSStandortViewController alloc] init];
+    viewController.standort = annotation.standort;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
