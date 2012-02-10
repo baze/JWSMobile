@@ -82,6 +82,8 @@
         region.span = span;
     
         [self.mapView setRegion:region animated:YES];
+        
+        self.mapView.showsUserLocation = YES;
     }
 }
 
@@ -99,6 +101,10 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    if (![annotation isKindOfClass:[JWSStandortAnnotation class]]) {
+        return nil;
+    }
+    
     MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
     if (!aView) {
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
