@@ -147,10 +147,13 @@
 		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				67C1CCF114E66D1000DCA2D0 /* JWSStandortAnnotation.h */,
-				67C1CCF214E66D1000DCA2D0 /* JWSStandortAnnotation.m */,
 				67C1CCF314E66D1000DCA2D0 /* MapViewController.h */,
 				67C1CCF414E66D1000DCA2D0 /* MapViewController.m */,
+				67C1CCF114E66D1000DCA2D0 /* JWSStandortAnnotation.h */,
+				67C1CCF214E66D1000DCA2D0 /* JWSStandortAnnotation.m */,
+				67C1CCFB14E66E3E00DCA2D0 /* JWSStandortViewController.h */,
+				67C1CCFC14E66E3E00DCA2D0 /* JWSStandortViewController.m */,
+				67C1CCFD14E66E3E00DCA2D0 /* JWSStandortViewController.xib */,
 				2AB4365014E18032001A135B /* julius_wegeler_schule.png */,
 				2AE5612914E15FED00DC897A /* standorte.plist */,
 				675FB46F14DDB8B0005E67BE /* MainStoryboard.storyboard */,
@@ -183,9 +186,6 @@
 				67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */,
 				67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */,
 				67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */,
-				67C1CCFB14E66E3E00DCA2D0 /* JWSStandortViewController.h */,
-				67C1CCFC14E66E3E00DCA2D0 /* JWSStandortViewController.m */,
-				67C1CCFD14E66E3E00DCA2D0 /* JWSStandortViewController.xib */,
 				675FB46414DDB8B0005E67BE /* Supporting Files */,
 			);
 			path = "JWS Mobile";

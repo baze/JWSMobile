@@ -46,9 +46,10 @@
 
 - (NSArray *)annotations
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"standorte" ofType:@"plist"];
     
     NSMutableArray *annotations = nil;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"standorte" ofType:@"plist"];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSArray *standorte = [NSArray arrayWithContentsOfFile:filePath];
@@ -66,9 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.mapView addAnnotations:[self annotations]];
-    
+
     if (self.annotations.count) {
         JWSStandortAnnotation *annotation = [self.annotations objectAtIndex:0];
         MKCoordinateRegion region;
@@ -80,8 +79,20 @@
         region.span = span;
     
         [self.mapView setRegion:region animated:YES];
-        
-        self.mapView.showsUserLocation = YES;
+    }
+}
+
+- (void)track {
+    if (self.mapView.showsUserLocation) {
+        MKCoordinateRegion region;
+        region.center = self.mapView.userLocation.location.coordinate;
+    
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.05;
+        span.longitudeDelta = 0.05;
+        region.span = span;
+    
+        [self.mapView setRegion:region animated:YES];
     }
 }
 
@@ -89,10 +100,21 @@
 {
     [super viewDidLoad];
     
-    if ([CLLocationManager locationServicesEnabled] == NO) {
+    self.mapView.showsUserLocation = YES;
+    
+    [self.mapView addAnnotations:[self annotations]];
+    
+    MKUserTrackingBarButtonItem *trackButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    [trackButton setTarget:self];
+    [trackButton setAction:@selector(track)];
+    
+    self.navigationItem.rightBarButtonItem = trackButton;
+    
+  /*  if ([CLLocationManager locationServicesEnabled] == NO) {
         UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled" message:@"You currently have all location services for this device disabled. If you proceed, you will be asked to confirm whether location services should be reenabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [servicesDisabledAlert show];
     }
+   */
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
