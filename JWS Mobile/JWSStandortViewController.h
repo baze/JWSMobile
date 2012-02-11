@@ -2,7 +2,7 @@
 //  JWSStandortViewController.h
 //  JWS Mobile
 //
-//  Created by Björn Martensen on 10.02.12.
+//  Created by Björn Martensen on 11.02.12.
 //  Copyright (c) 2012 eberle & wollweber COMMUNICATIONS GmbH. All rights reserved.
 //
 
