@@ -83,16 +83,21 @@
 }
 
 - (void)track {
-    if (self.mapView.showsUserLocation) {
-        MKCoordinateRegion region;
-        region.center = self.mapView.userLocation.location.coordinate;
-    
-        MKCoordinateSpan span;
-        span.latitudeDelta = 0.05;
-        span.longitudeDelta = 0.05;
-        region.span = span;
-    
-        [self.mapView setRegion:region animated:YES];
+    if ([CLLocationManager locationServicesEnabled] == NO) {
+        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled" message:@"You currently have all location services for this device disabled. If you proceed, you will be asked to confirm whether location services should be reenabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [servicesDisabledAlert show];
+    } else {
+        if (self.mapView.showsUserLocation) {
+            MKCoordinateRegion region;
+            region.center = self.mapView.userLocation.location.coordinate;
+            
+            MKCoordinateSpan span;
+            span.latitudeDelta = 0.05;
+            span.longitudeDelta = 0.05;
+            region.span = span;
+            
+            [self.mapView setRegion:region animated:YES];
+        }
     }
 }
 
@@ -109,12 +114,6 @@
     [trackButton setAction:@selector(track)];
     
     self.navigationItem.rightBarButtonItem = trackButton;
-    
-  /*  if ([CLLocationManager locationServicesEnabled] == NO) {
-        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled" message:@"You currently have all location services for this device disabled. If you proceed, you will be asked to confirm whether location services should be reenabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [servicesDisabledAlert show];
-    }
-   */
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

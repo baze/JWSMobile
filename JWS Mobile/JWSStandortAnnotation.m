@@ -22,12 +22,12 @@
 
 - (NSString *)title
 {
-    return [self.standort objectForKey:STANDORT_TITLE];
+    return [self.standort objectForKey:STANDORT_ADDRESS];
 }
 
 - (NSString *)subtitle
 {
-    return [self.standort objectForKey:STANDORT_SUBTITLE];
+    return [self.standort objectForKey:STANDORT_TITLE];
 }
 
 - (CLLocationCoordinate2D)coordinate

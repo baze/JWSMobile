@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JWSStandortViewController : UIViewController
+@interface JWSStandortViewController : UITableViewController
 
 @property (nonatomic, strong) NSDictionary *standort;
 

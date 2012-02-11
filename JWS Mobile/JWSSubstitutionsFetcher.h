@@ -19,8 +19,11 @@
 #define SUBSTITUTION_ID @"hash"
 #define SUBSTITUTION_DATE @"date"
 
-#define STANDORT_TITLE @"street"
-#define STANDORT_SUBTITLE @"type"
+#define STANDORT_ADDRESS @"street"
+#define STANDORT_TITLE @"type"
+#define STANDORT_ZIP @"zip"
+#define STANDORT_CITY @"city"
+#define STANDORT_PHONE @"phone"
 #define STANDORT_LATITUDE @"coordinates.latitude"
 #define STANDORT_LONGITUDE @"coordinates.longitude"
 
