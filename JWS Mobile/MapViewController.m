@@ -8,7 +8,6 @@
 
 #import "MapViewController.h"
 #import "JWSStandortAnnotation.h"
-#import "JWSStandortViewController.h"
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
@@ -121,39 +120,39 @@
     if (![annotation isKindOfClass:[JWSStandortAnnotation class]]) {
         return nil;
     }
+    static NSString *CellIdentifier = @"MapVC";
     
-    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
+    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:CellIdentifier];
     if (!aView) {
-        aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
+        aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:CellIdentifier];
         aView.canShowCallout = YES;
         
         UIButton *disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         aView.rightCalloutAccessoryView = disclosureButton;
-        
-     //   aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     }
     aView.annotation = annotation;
-   // [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
     
     return aView;
-}
-
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-  //  UIImage *image = nil;
-  //  [(UIImageView *)view.leftCalloutAccessoryView setImage:image];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     if (![view.annotation isKindOfClass:[JWSStandortAnnotation class]])
         return;
-    
-    JWSStandortAnnotation *annotation = (JWSStandortAnnotation *)view.annotation;
-    
-    JWSStandortViewController *viewController = [[JWSStandortViewController alloc] init];
-    viewController.standort = annotation.standort;
-    [self.navigationController pushViewController:viewController animated:YES];
+
+    [self performSegueWithIdentifier:@"Show Standort" sender:view];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show Standort"]) {
+
+        JWSStandortAnnotation *annotation = [(JWSStandortAnnotation *)sender performSelector:@selector(annotation)];
+        
+        if ([segue.destinationViewController respondsToSelector:@selector(setStandort:)]) {
+            [segue.destinationViewController performSelector:@selector(setStandort:) withObject:annotation.standort];
+        }
+    }
 }
 
 @end

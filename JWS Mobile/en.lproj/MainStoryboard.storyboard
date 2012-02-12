@@ -105,7 +105,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1b-Zs-T9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="RkX-en-sdg" customClass="SubstitutionDetailsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Tfe-qo-3pW">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Tfe-qo-3pW">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -322,7 +322,8 @@
                 <navigationController id="LQx-j8-b9L" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vertretungsplan" id="VPl-Hj-LZe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MyH-hN-4G2">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="MyH-hN-4G2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -339,7 +340,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7e-sb-gI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="9RL-en-tMi" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DCV-Nj-VrD">
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
@@ -381,13 +384,27 @@
                     <navigationItem key="navigationItem" title="Anfahrt" id="Nmc-B3-s2m">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Itg-Hu-bSM" customClass="MKUserTrackingBarButtonItem"/>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="pAz-46-k5K" id="r3w-6Y-Kwd"/>
+                        <segue destination="mLw-53-rMU" kind="push" identifier="Show Standort" id="FAE-84-dND"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1043" y="624"/>
+            <point key="canvasLocation" x="951" y="969"/>
+        </scene>
+        <scene sceneID="rqT-tg-ezn">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iay-x9-RHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mLw-53-rMU" customClass="JWSStandortViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P9A-CG-J4r">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hEj-WQ-uug"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1374" y="969"/>
         </scene>
         <scene sceneID="fkp-18-Fdv">
             <objects>
@@ -524,10 +541,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vertretungsplan" id="jku-kz-JZR">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="gGy-Lv-Zjh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gGy-Lv-Zjh">
                             <connections>
                                 <action selector="refresh:" destination="Nmq-mO-YUx" id="7jH-Ew-CGv"/>
                             </connections>
@@ -540,20 +557,26 @@
         <scene sceneID="35Q-DZ-Jzv">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGf-JM-G1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="yfW-DF-Jeg" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="yfW-DF-Jeg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Anfahrt &amp; Kontakt" id="kpK-RS-8fe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XO8-93-zba">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="XO8-93-zba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="blackOpaque" id="dC9-IW-l4e">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="1f0-L9-lP2" kind="relationship" relationship="rootViewController" id="gLC-7F-HFG"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="517" y="624"/>
+            <point key="canvasLocation" x="530" y="969"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

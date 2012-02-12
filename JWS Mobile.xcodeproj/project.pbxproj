@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2AB4365114E18032001A135B /* julius_wegeler_schule.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4365014E18032001A135B /* julius_wegeler_schule.png */; };
 		2AE5612A14E15FED00DC897A /* standorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE5612914E15FED00DC897A /* standorte.plist */; };
+		6736FAA214E7F29D001A660C /* JWSStandortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6736FAA114E7F29D001A660C /* JWSStandortViewController.m */; };
 		675FB45E14DDB8B0005E67BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45D14DDB8B0005E67BE /* UIKit.framework */; };
 		675FB46014DDB8B0005E67BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB45F14DDB8B0005E67BE /* Foundation.framework */; };
 		675FB46214DDB8B0005E67BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675FB46114DDB8B0005E67BE /* CoreGraphics.framework */; };
@@ -25,7 +26,6 @@
 		678C114614DE9B8100476008 /* SchoolClass+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 678C114514DE9B8100476008 /* SchoolClass+Create.m */; };
 		678C114914DE9F4600476008 /* SubstitutionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678C114814DE9F4600476008 /* SubstitutionDetailsTableViewController.m */; };
 		6793EFB314DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6793EFB214DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m */; };
-		679841D214E6851E00902057 /* JWSStandortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 679841D114E6851E00902057 /* JWSStandortViewController.m */; };
 		67B02B0F14DDB9780090E6C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */; };
 		67B02B1314DDB9870090E6C6 /* JWSSubstitutionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1214DDB9870090E6C6 /* JWSSubstitutionsFetcher.m */; };
 		67B02B1614DDB9BE0090E6C6 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B02B1514DDB9BE0090E6C6 /* DaysTableViewController.m */; };
@@ -43,6 +43,8 @@
 		2A86C31714E3BBB10002B0B2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2AB4365014E18032001A135B /* julius_wegeler_schule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = julius_wegeler_schule.png; sourceTree = "<group>"; };
 		2AE5612914E15FED00DC897A /* standorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = standorte.plist; sourceTree = "<group>"; };
+		6736FAA014E7F29D001A660C /* JWSStandortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSStandortViewController.h; sourceTree = "<group>"; };
+		6736FAA114E7F29D001A660C /* JWSStandortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSStandortViewController.m; sourceTree = "<group>"; };
 		675FB45914DDB8AF005E67BE /* JWS Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JWS Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675FB45D14DDB8B0005E67BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		675FB45F14DDB8B0005E67BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,8 +72,6 @@
 		678C114814DE9F4600476008 /* SubstitutionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionDetailsTableViewController.m; sourceTree = "<group>"; };
 		6793EFB114DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstitutionsBySchoolClassTableViewController.h; sourceTree = "<group>"; };
 		6793EFB214DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstitutionsBySchoolClassTableViewController.m; sourceTree = "<group>"; };
-		679841D014E6851E00902057 /* JWSStandortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSStandortViewController.h; sourceTree = "<group>"; };
-		679841D114E6851E00902057 /* JWSStandortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWSStandortViewController.m; sourceTree = "<group>"; };
 		67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		67B02B1114DDB9870090E6C6 /* JWSSubstitutionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWSSubstitutionsFetcher.h; sourceTree = "<group>"; };
@@ -145,6 +145,8 @@
 		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				6736FAA014E7F29D001A660C /* JWSStandortViewController.h */,
+				6736FAA114E7F29D001A660C /* JWSStandortViewController.m */,
 				67C1CCF314E66D1000DCA2D0 /* MapViewController.h */,
 				67C1CCF414E66D1000DCA2D0 /* MapViewController.m */,
 				67C1CCF114E66D1000DCA2D0 /* JWSStandortAnnotation.h */,
@@ -182,8 +184,6 @@
 				67B02B0D14DDB9780090E6C6 /* CoreDataTableViewController.h */,
 				67B02B0E14DDB9780090E6C6 /* CoreDataTableViewController.m */,
 				675FB46414DDB8B0005E67BE /* Supporting Files */,
-				679841D014E6851E00902057 /* JWSStandortViewController.h */,
-				679841D114E6851E00902057 /* JWSStandortViewController.m */,
 			);
 			path = "JWS Mobile";
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 				6793EFB314DEAAD000EF1719 /* SubstitutionsBySchoolClassTableViewController.m in Sources */,
 				67C1CCF614E66D1000DCA2D0 /* JWSStandortAnnotation.m in Sources */,
 				67C1CCF714E66D1000DCA2D0 /* MapViewController.m in Sources */,
-				679841D214E6851E00902057 /* JWSStandortViewController.m in Sources */,
+				6736FAA214E7F29D001A660C /* JWSStandortViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
