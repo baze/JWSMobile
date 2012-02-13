@@ -661,6 +661,10 @@
                                     <segue destination="exu-oF-bst" kind="push" identifier="Show Classes" id="7il-5d-0Lc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="julius_wegeler_schule.png" id="wN6-OR-oQm">
+                                <rect key="frame" x="20" y="20" width="280" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -699,6 +703,9 @@
             <point key="canvasLocation" x="530" y="969"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="julius_wegeler_schule.png" width="298" height="107"/>
+    </resources>
     <classes>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
