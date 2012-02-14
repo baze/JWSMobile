@@ -342,7 +342,6 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DCV-Nj-VrD">
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
@@ -359,11 +358,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgC-NN-CPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="1f0-L9-lP2" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMb-sM-73f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="pAz-46-k5K">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="1f0-L9-lP2" id="oeu-0f-OEB"/>
@@ -381,6 +380,7 @@
                         <segue destination="OKU-uy-1fq" kind="push" identifier="Show Standort" id="aYj-yc-CV9"/>
                     </connections>
                 </viewController>
+                <customObject id="qF3-4z-5gR" customClass="CLLocationManager"/>
             </objects>
             <point key="canvasLocation" x="951" y="969"/>
         </scene>
@@ -389,7 +389,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niU-Oi-6c8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="OKU-uy-1fq" customClass="JWSStandortTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Gmt-qq-Kth">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -677,16 +677,11 @@
                     <tabBarItem key="tabBarItem" title="Anfahrt &amp; Kontakt" id="kpK-RS-8fe"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="XO8-93-zba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="blackOpaque" id="dC9-IW-l4e">
-                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="1f0-L9-lP2" kind="relationship" relationship="rootViewController" id="reL-Xi-aZV"/>
                     </connections>
@@ -699,6 +694,9 @@
         <image name="julius_wegeler_schule.png" width="298" height="107"/>
     </resources>
     <classes>
+        <class className="CLLocationManager" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
+        </class>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
         </class>
