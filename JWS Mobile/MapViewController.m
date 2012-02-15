@@ -7,16 +7,17 @@
 //
 
 #import "MapViewController.h"
+#import <MapKit/MapKit.h>
 #import "JWSStandortAnnotation.h"
 
-@interface MapViewController ()
-@property (nonatomic, weak) IBOutlet CLLocationManager *locationManager;
+@interface MapViewController() <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
 @synthesize annotations = _annotations;
-@synthesize locationManager = _locationManager;
+@synthesize delegate = _delegate;
 
 - (void)updateMapView
 {
@@ -118,15 +119,11 @@
     [trackButton setAction:@selector(track)];
     
     self.navigationItem.rightBarButtonItem = trackButton;
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if (![annotation isKindOfClass:[JWSStandortAnnotation class]]) {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
     static NSString *CellIdentifier = @"MapVC";
@@ -146,9 +143,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    if (![view.annotation isKindOfClass:[JWSStandortAnnotation class]])
-        return;
-
+    NSDictionary *standort = [self.delegate mapViewcontroller:self dictionaryForAnnotation:view.annotation];
     [self performSegueWithIdentifier:@"Show Standort" sender:view];
 }
 
@@ -157,7 +152,7 @@
     if ([segue.identifier isEqualToString:@"Show Standort"]) {
 
         JWSStandortAnnotation *annotation = [(JWSStandortAnnotation *)sender performSelector:@selector(annotation)];
-        
+
         if ([segue.destinationViewController respondsToSelector:@selector(setStandort:)]) {
             [segue.destinationViewController performSelector:@selector(setStandort:) withObject:annotation.standort];
         }
