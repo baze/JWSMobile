@@ -380,7 +380,6 @@
                         <segue destination="OKU-uy-1fq" kind="push" identifier="Show Standort" id="aYj-yc-CV9"/>
                     </connections>
                 </viewController>
-                <customObject id="qF3-4z-5gR" customClass="CLLocationManager"/>
             </objects>
             <point key="canvasLocation" x="951" y="969"/>
         </scene>
@@ -693,59 +692,6 @@
     <resources>
         <image name="julius_wegeler_schule.png" width="298" height="107"/>
     </resources>
-    <classes>
-        <class className="CLLocationManager" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
-        </class>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="DaysTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DaysTableViewController.h"/>
-        </class>
-        <class className="JWSMobileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSMobileViewController.h"/>
-        </class>
-        <class className="JWSStandortTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSStandortTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phoneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="schoolLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MKUserTrackingBarButtonItem" superclassName="UIBarButtonItem">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MKUserTrackingBarButtonItem.h"/>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SchoolClassesTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolClassesTableViewController.h"/>
-        </class>
-        <class className="SubstitutionDetailsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionDetailsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="DatumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="InfoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="KlasseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LehrerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="PosLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="RaumLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="VLehrerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>
-        </class>
-        <class className="SubstitutionsBySchoolClassTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsBySchoolClassTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

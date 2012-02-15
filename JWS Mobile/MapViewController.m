@@ -9,9 +9,14 @@
 #import "MapViewController.h"
 #import "JWSStandortAnnotation.h"
 
+@interface MapViewController ()
+@property (nonatomic, weak) IBOutlet CLLocationManager *locationManager;
+@end
+
 @implementation MapViewController
 @synthesize mapView = _mapView;
 @synthesize annotations = _annotations;
+@synthesize locationManager = _locationManager;
 
 - (void)updateMapView
 {
@@ -91,8 +96,8 @@
             region.center = self.mapView.userLocation.location.coordinate;
             
             MKCoordinateSpan span;
-            span.latitudeDelta = 0.05;
-            span.longitudeDelta = 0.05;
+            span.latitudeDelta = 0.02;
+            span.longitudeDelta = 0.02;
             region.span = span;
             
             [self.mapView setRegion:region animated:YES];
@@ -113,6 +118,10 @@
     [trackButton setAction:@selector(track)];
     
     self.navigationItem.rightBarButtonItem = trackButton;
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
