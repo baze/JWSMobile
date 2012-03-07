@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface DaysTableViewController : CoreDataTableViewController
+@interface DaysTableViewController : CoreDataTableViewController <UISearchBarDelegate>
 
 @property (nonatomic, strong) UIManagedDocument *substitutionDatabase;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

@@ -14,8 +14,15 @@
 {
     Day *day = nil;
     
+   // NSLog(@"%@", date);
+    
+    NSArray *components = [date componentsSeparatedByString:@" "];
+    
+    NSString *namePart = nil;
+    NSString *datePart = [components lastObject];
+    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
-    request.predicate = [NSPredicate predicateWithFormat:@"date = %@", date];
+    request.predicate = [NSPredicate predicateWithFormat:@"date = %@", datePart];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
@@ -26,7 +33,7 @@
         // handle error
     } else if (![days count]) {
         day = [NSEntityDescription insertNewObjectForEntityForName:@"Day" inManagedObjectContext:context];
-        day.date = date;
+        day.date = datePart;
     } else {
         day = [days lastObject];
     }

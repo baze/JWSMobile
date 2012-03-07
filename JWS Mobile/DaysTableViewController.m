@@ -12,11 +12,33 @@
 @implementation DaysTableViewController
 
 @synthesize substitutionDatabase = _substitutionDatabase;
+@synthesize searchBar = _searchBar;
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length > 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date LIKE[c] %@", [NSString stringWithFormat:@"*%@*", searchText]];
+        [self setupFetchedResultsControllerWithPredicate:predicate];
+    } else {
+        [self setupFetchedResultsController];
+    }
+}
 
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.substitutionDatabase.managedObjectContext 
+                                                                          sectionNameKeyPath:nil 
+                                                                                   cacheName:nil];
+}
+
+- (void)setupFetchedResultsControllerWithPredicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.predicate = predicate;
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.substitutionDatabase.managedObjectContext 
@@ -73,4 +95,8 @@
     }
 }
 
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
 @end
