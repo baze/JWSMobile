@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface SchoolClassesTableViewController : CoreDataTableViewController
+@interface SchoolClassesTableViewController : CoreDataTableViewController <UISearchBarDelegate>
 
 @property (nonatomic, strong) UIManagedDocument *substitutionDatabase;
+@property (weak, nonatomic) IBOutlet UITableView *searchBar;
 
 @end

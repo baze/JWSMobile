@@ -17,7 +17,9 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse.name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    request.predicate = [NSPredicate predicateWithFormat:@"date.date = %@", self.day.date];
+
+    NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:[NSPredicate predicateWithFormat:@"NOT klasse.name LIKE '&nbsp;'"], [NSPredicate predicateWithFormat:@"date.date = %@", self.day.date], nil]];
+    request.predicate = compoundPredicate;
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.day.managedObjectContext 

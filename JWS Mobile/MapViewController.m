@@ -143,15 +143,16 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSDictionary *standort = [self.delegate mapViewcontroller:self dictionaryForAnnotation:view.annotation];
     [self performSegueWithIdentifier:@"Show Standort" sender:view];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Standort"]) {
-
+        
         JWSStandortAnnotation *annotation = [(JWSStandortAnnotation *)sender performSelector:@selector(annotation)];
+
+//        NSDictionary *standort = [self.delegate mapViewcontroller:self dictionaryForAnnotation:annotation];
 
         if ([segue.destinationViewController respondsToSelector:@selector(setStandort:)]) {
             [segue.destinationViewController performSelector:@selector(setStandort:) withObject:annotation.standort];
@@ -159,4 +160,62 @@
     }
 }
 
+/*
+- (void)updateVisibleAnnotations
+{
+    // Fix performance and visual clutter by calling update when we change
+    // map regions
+    // This value controls the number of off screen annotations and displayed.
+    // A bigger number means more annotations, less chance of seeing annotation views pop in but decreased performance.
+    // A smaller number means fewer annotations, more chance of seeing annotation views pop in but better performance.
+    static float marginFactor = 2.0;
+    
+    // Adjust this roughly based on the dimensions of your annotation views.
+    // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
+    // Numbers too small result in overlapping annotation views and too many annotations on screen.
+    static float bucketSize = 60.0;
+    
+    // Find all the annotations in the visible area + a wide margin to avoid popping annotation views in an out while panning the map.
+    MKMapRect visibleMapRect = [self.mapView visibleMapRect];
+    MKMapRect adjustedVisibleMapRect = MKMapRectInset(visibleMapRect, -marginFactor * visibleMapRect.size.width, -marginFactor * visibleMapRect.size.height);
+    
+    // Determine how wide each bucket will be, as a MKMapRect square
+    CLLocationCoordinate2D leftCoordinate = [self.mapView convertPoint:CGPointZero toCoordinateFromView:self.view];
+    CLLocationCoordinate2D rightCoordinate = [self.mapView convertPoint:CGPointMake(bucketSize, 0) toCoordinateFromView:self.view];
+    double gridSize = MKMapPointForCoordinate(rightCoordinate).x - MKMapPointForCoordinate(leftCoordinate).x;
+    MKMapRect gridMapRect = MKMapRectMake(0, 0, gridSize, gridSize);
+    
+    // Condense annotations, with a padding of two squares around the visibleMapRect
+    double startX = floor(MKMapRectGetMinX(adjustedVisibleMapRect) / gridSize) * gridSize;
+    double startY = floor(MKMapRectGetMinY(adjustedVisibleMapRect) / gridSize) * gridSize;
+    double endX = floor(MKMapRectGetMaxX(adjustedVisibleMapRect) / gridSize) * gridSize;
+    double endY = floor(MKMapRectGetMaxY(adjustedVisibleMapRect) / gridSize) * gridSize;
+    
+    // For each square in our grid, pick one annotation to show
+    gridMapRect.origin.y = startY;
+    while (MKMapRectGetMinY(gridMapRect) <= endY) {
+        gridMapRect.origin.x = startX;
+        
+        while (MKMapRectGetMinX(gridMapRect) <= endX) {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        gridMapRect.origin.x += gridSize;
+    }
+    
+    gridMapRect.origin.y += gridSize;
+}
+*/
 @end

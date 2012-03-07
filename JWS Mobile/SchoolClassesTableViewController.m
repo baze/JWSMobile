@@ -12,6 +12,16 @@
 @implementation SchoolClassesTableViewController
 
 @synthesize substitutionDatabase = _substitutionDatabase;
+@synthesize searchBar = _searchBar;
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length > 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE[c] %@", [NSString stringWithFormat:@"*%@*", searchText]];
+        [self setupFetchedResultsControllerWithPredicate:predicate];
+    } else {
+        [self setupFetchedResultsControllerWithPredicate:nil];
+    }
+}
 
 - (void)setupFetchedResultsController
 {
@@ -24,18 +34,38 @@
                                                                                    cacheName:nil];
 }
 
+- (void)setupFetchedResultsControllerWithPredicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SchoolClass"];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name"ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"NOT name LIKE '&nbsp;'"];
+    
+    if (predicate) {
+        NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:myPredicate, predicate, nil]];
+        request.predicate = compoundPredicate;
+    } else {
+        request.predicate = myPredicate;
+    }
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.substitutionDatabase.managedObjectContext 
+                                                                          sectionNameKeyPath:nil 
+                                                                                   cacheName:nil];
+}
+
 - (void)useDocument
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.substitutionDatabase.fileURL path]]) {
         [self.substitutionDatabase saveToURL:self.substitutionDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
+            [self setupFetchedResultsControllerWithPredicate:nil];
         }];
     } else if (self.substitutionDatabase.documentState == UIDocumentStateClosed) {
         [self.substitutionDatabase openWithCompletionHandler:^(BOOL success) {
-            [self setupFetchedResultsController];
+            [self setupFetchedResultsControllerWithPredicate:nil];
         }];
     } else if (self.substitutionDatabase.documentState == UIDocumentStateNormal) {
-        [self setupFetchedResultsController];
+        [self setupFetchedResultsControllerWithPredicate:nil];
     }
 }
 
@@ -73,4 +103,8 @@
     }
 }
 
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
 @end

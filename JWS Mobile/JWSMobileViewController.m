@@ -6,9 +6,12 @@
 //  Copyright (c) 2012 eberle & wollweber COMMUNICATIONS GmbH. All rights reserved.
 //
 
+
+
 #import "JWSMobileViewController.h"
 #import "JWSSubstitutionsFetcher.h"
 #import "Substitution+JWS.h"
+#import "Reachability.h"
 
 @implementation JWSMobileViewController
 
@@ -56,6 +59,11 @@
     }
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutionDatabase:)]) {
@@ -81,12 +89,35 @@
     }
 }
 
+- (BOOL)reachable {
+    Reachability *r = [Reachability reachabilityWithHostName:@"jws.bjoernmartensen.de"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(internetStatus == NotReachable) {
+        return NO;
+    }
+    return YES;
+}
+
 - (IBAction)refresh:(id)sender {
-    [self deleteAllEntitiesForName:@"Day"];
-    [self deleteAllEntitiesForName:@"Substitution"];
-    [self deleteAllEntitiesForName:@"SchoolClass"];
-    
-    [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
+    if ([self reachable]) {
+        //NSLog(@"Reachable");
+        [self deleteAllEntitiesForName:@"Day"];
+        [self deleteAllEntitiesForName:@"Substitution"];
+        [self deleteAllEntitiesForName:@"SchoolClass"];
+        
+        [self fetchSubstitutionDataIntoDocument:self.substitutionDatabase];
+    }
+    else {
+        //NSLog(@"Not Reachable");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network Connection." message:@"Your network is not available. Please try again, when you are connected to the internet." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        // do stuff
+    }
 }
 
 @end
