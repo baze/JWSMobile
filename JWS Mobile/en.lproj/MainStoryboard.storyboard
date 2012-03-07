@@ -18,6 +18,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="7LF-Yd-FiE" id="A41-Ee-geb"/>
                             </connections>
@@ -725,6 +729,63 @@
     <resources>
         <image name="julius_wegeler_schule.png" width="298" height="107"/>
     </resources>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="DaysTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DaysTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="JWSMobileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSMobileViewController.h"/>
+        </class>
+        <class className="JWSStandortTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JWSStandortTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="schoolLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MKUserTrackingBarButtonItem" superclassName="UIBarButtonItem">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MKUserTrackingBarButtonItem.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SchoolClassesTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SchoolClassesTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SubstitutionDetailsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionDetailsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="DatumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="InfoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="KlasseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LehrerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="PosLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="RaumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="VLehrerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>
+        </class>
+        <class className="SubstitutionsBySchoolClassTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsBySchoolClassTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

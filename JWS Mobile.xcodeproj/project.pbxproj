@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A605B191507B0C000A07286 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A605B181507B0C000A07286 /* SystemConfiguration.framework */; };
+		2A605B1C1507B75900A07286 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A605B1B1507B16000A07286 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2AB4365114E18032001A135B /* julius_wegeler_schule.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4365014E18032001A135B /* julius_wegeler_schule.png */; };
 		2AE5612A14E15FED00DC897A /* standorte.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE5612914E15FED00DC897A /* standorte.plist */; };
 		6746013914E81D6E00E0A0EF /* JWSStandortTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6746013814E81D6E00E0A0EF /* JWSStandortTableViewController.m */; };
@@ -40,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A605B181507B0C000A07286 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2A605B1A1507B16000A07286 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2A605B1B1507B16000A07286 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2A86C31714E3BBB10002B0B2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2AB4365014E18032001A135B /* julius_wegeler_schule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = julius_wegeler_schule.png; sourceTree = "<group>"; };
 		2AE5612914E15FED00DC897A /* standorte.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = standorte.plist; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A605B191507B0C000A07286 /* SystemConfiguration.framework in Frameworks */,
 				678C113114DE95C700476008 /* CoreLocation.framework in Frameworks */,
 				678C112F14DE95C000476008 /* MapKit.framework in Frameworks */,
 				67B02B1814DDBC7B0090E6C6 /* CoreData.framework in Frameworks */,
@@ -114,10 +120,6 @@
 		675FB44E14DDB8AF005E67BE = {
 			isa = PBXGroup;
 			children = (
-				2A86C31714E3BBB10002B0B2 /* CoreImage.framework */,
-				678C113014DE95C700476008 /* CoreLocation.framework */,
-				678C112E14DE95C000476008 /* MapKit.framework */,
-				67B02B1714DDBC7B0090E6C6 /* CoreData.framework */,
 				675FB46314DDB8B0005E67BE /* JWS Mobile */,
 				675FB45C14DDB8AF005E67BE /* Frameworks */,
 				675FB45A14DDB8AF005E67BE /* Products */,
@@ -135,6 +137,11 @@
 		675FB45C14DDB8AF005E67BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A605B181507B0C000A07286 /* SystemConfiguration.framework */,
+				2A86C31714E3BBB10002B0B2 /* CoreImage.framework */,
+				678C113014DE95C700476008 /* CoreLocation.framework */,
+				678C112E14DE95C000476008 /* MapKit.framework */,
+				67B02B1714DDBC7B0090E6C6 /* CoreData.framework */,
 				675FB45D14DDB8B0005E67BE /* UIKit.framework */,
 				675FB45F14DDB8B0005E67BE /* Foundation.framework */,
 				675FB46114DDB8B0005E67BE /* CoreGraphics.framework */,
@@ -145,6 +152,8 @@
 		675FB46314DDB8B0005E67BE /* JWS Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				2A605B1A1507B16000A07286 /* Reachability.h */,
+				2A605B1B1507B16000A07286 /* Reachability.m */,
 				6746013714E81D6E00E0A0EF /* JWSStandortTableViewController.h */,
 				6746013814E81D6E00E0A0EF /* JWSStandortTableViewController.m */,
 				67C1CCF314E66D1000DCA2D0 /* MapViewController.h */,
@@ -266,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A605B1C1507B75900A07286 /* Reachability.m in Sources */,
 				675FB46A14DDB8B0005E67BE /* main.m in Sources */,
 				675FB46E14DDB8B0005E67BE /* JWSMobileAppDelegate.m in Sources */,
 				675FB47414DDB8B0005E67BE /* JWSMobileViewController.m in Sources */,

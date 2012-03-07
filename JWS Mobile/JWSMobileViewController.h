@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JWSMobileViewController : UIViewController
+@interface JWSMobileViewController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIManagedDocument *substitutionDatabase;
 
