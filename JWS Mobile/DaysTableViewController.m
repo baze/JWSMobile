@@ -23,6 +23,11 @@
     }
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    searchBar.text = @"";
+    [searchBar resignFirstResponder];
+}
+
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
