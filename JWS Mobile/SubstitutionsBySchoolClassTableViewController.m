@@ -45,7 +45,7 @@
     
     // Configure the cell...
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [substitution valueForKeyPath:@"date.date"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [substitution valueForKeyPath:@"date.date"]];
     cell.detailTextLabel.text = substitution.lehrer;
     
     return cell;

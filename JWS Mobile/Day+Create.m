@@ -14,15 +14,20 @@
 {
     Day *day = nil;
     
-   // NSLog(@"%@", date);
+//    NSLog(@"%@", date);
     
     NSArray *components = [date componentsSeparatedByString:@" "];
     
-    NSString *namePart = nil;
+//    NSString *namePart = nil;
     NSString *datePart = [components lastObject];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd.MM.yyyy";
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSDate *myDate = [dateFormatter dateFromString:datePart];
+
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
-    request.predicate = [NSPredicate predicateWithFormat:@"date = %@", datePart];
+    request.predicate = [NSPredicate predicateWithFormat:@"date = %@", myDate];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
@@ -33,7 +38,7 @@
         // handle error
     } else if (![days count]) {
         day = [NSEntityDescription insertNewObjectForEntityForName:@"Day" inManagedObjectContext:context];
-        day.date = datePart;
+        day.date = myDate;
     } else {
         day = [days lastObject];
     }

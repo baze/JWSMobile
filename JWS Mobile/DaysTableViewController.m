@@ -31,7 +31,7 @@
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(compare:)]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.substitutionDatabase.managedObjectContext 
@@ -42,7 +42,7 @@
 - (void)setupFetchedResultsControllerWithPredicate:(NSPredicate *)predicate
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Day"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES selector:@selector(compare:)]];
     request.predicate = predicate;
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -85,7 +85,7 @@
     
     // Configure the cell...
     Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = day.date;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", day.date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungsstunden", [day.substitutions count]];
     
     return cell;

@@ -31,7 +31,7 @@
 {
     if (_day != day) {
         _day = day;
-        self.title = day.date;
+        self.title = [NSString stringWithFormat:@"%@", day.date];
         [self setupFetchedResultsController];
     }
 }
