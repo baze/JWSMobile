@@ -13,12 +13,8 @@
 + (Day *)dayWithDate:(NSString *)date inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Day *day = nil;
-    
-//    NSLog(@"%@", date);
-    
+
     NSArray *components = [date componentsSeparatedByString:@" "];
-    
-//    NSString *namePart = nil;
     NSString *datePart = [components lastObject];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
