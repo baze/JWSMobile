@@ -45,7 +45,12 @@
     
     // Configure the cell...
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [substitution valueForKeyPath:@"date.date"]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"EEEE, dd.MM.yyyy";
+    NSString *stringFromDate = [formatter stringFromDate:[substitution valueForKeyPath:@"date.date"]];
+    
+    cell.textLabel.text = stringFromDate;
     cell.detailTextLabel.text = substitution.lehrer;
     
     return cell;

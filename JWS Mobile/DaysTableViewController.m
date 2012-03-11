@@ -85,7 +85,12 @@
     
     // Configure the cell...
     Day *day = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", day.date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"EEEE, dd.MM.yyyy";
+    NSString *stringFromDate = [formatter stringFromDate:day.date];
+    
+    cell.textLabel.text = stringFromDate;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Vertretungsstunden", [day.substitutions count]];
     
     return cell;

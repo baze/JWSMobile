@@ -31,7 +31,12 @@
 {
     if (_day != day) {
         _day = day;
-        self.title = [NSString stringWithFormat:@"%@", day.date];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"dd.MM.yyyy";
+        NSString *stringFromDate = [formatter stringFromDate:day.date];
+        
+        self.title = stringFromDate;
         [self setupFetchedResultsController];
     }
 }

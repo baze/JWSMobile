@@ -24,7 +24,11 @@
 {
     [super viewWillAppear:animated];
     
-    self.DatumLabel.text = [self.substitution objectForKey:@"datum"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"EEEE, dd.MM.yyyy";
+    NSString *stringFromDate = [formatter stringFromDate:[self.substitution objectForKey:@"datum"]];
+    
+    self.DatumLabel.text = stringFromDate;
     self.KlasseLabel.text = [self.substitution objectForKey:@"klasse"];
     self.LehrerLabel.text = [self.substitution objectForKey:@"lehrer"];
     self.VLehrerLabel.text = [self.substitution objectForKey:@"vlehrer"];
