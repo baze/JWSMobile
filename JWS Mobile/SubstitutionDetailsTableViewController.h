@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface SubstitutionDetailsTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UILabel *DatumLabel;
+/*@property (weak, nonatomic) IBOutlet UILabel *DatumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *KlasseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *LehrerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *VLehrerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *PosLabel;
 @property (weak, nonatomic) IBOutlet UILabel *RaumLabel;
-@property (weak, nonatomic) IBOutlet UILabel *InfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *InfoLabel; */
 
-@property (nonatomic, strong) NSDictionary *substitution;
+@property (nonatomic, strong) NSArray *substitutions;
 
 @end

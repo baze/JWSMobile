@@ -62,11 +62,35 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutions:)]) {
         
-        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.date.date, [substitution valueForKeyPath:@"klasse.name"], substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"datum", @"klasse", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
+        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse.name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
         
-        [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
+        NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:[NSPredicate predicateWithFormat:@"NOT klasse.name LIKE '&nbsp;'"], [NSPredicate predicateWithFormat:@"date.date = %@", substitution.date.date], [NSPredicate predicateWithFormat:@"klasse.name = %@", [substitution valueForKeyPath:@"klasse.name"]], nil]];
+        request.predicate = compoundPredicate;
+        
+        NSArray *substitutions = [substitution.managedObjectContext executeFetchRequest:request error:nil];
+        
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:substitution.date.date, 
+                                                                                    [substitution valueForKeyPath:@"klasse.name"], 
+                                                                                    substitution.lehrer, 
+                                                                                    substitution.vlehrer, 
+                                                                                    substitution.pos, 
+                                                                                    substitution.raum, 
+                                                                                    substitution.info, nil] 
+                                                                           forKeys:[NSArray arrayWithObjects:@"datum", 
+                                                                                    @"klasse", 
+                                                                                    @"lehrer", 
+                                                                                    @"vlehrer", 
+                                                                                    @"pos", 
+                                                                                    @"raum", 
+                                                                                    @"info", nil]];
+        
+     //   NSArray *substitutions = [NSArray arrayWithObjects:substitutionDictionary, nil];
+        
+        [segue.destinationViewController performSelector:@selector(setSubstitutions:) withObject:substitutions];
     }
 }
 

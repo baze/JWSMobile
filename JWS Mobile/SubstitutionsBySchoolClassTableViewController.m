@@ -60,11 +60,26 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitution:)]) {
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutions:)]) {
         
-        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[substitution valueForKeyPath:@"date.date"], substitution.klasse.name, substitution.lehrer, substitution.vlehrer, substitution.pos, substitution.raum, substitution.info, nil] forKeys:[NSArray arrayWithObjects:@"datum", @"klasse", @"lehrer", @"vlehrer", @"pos", @"raum", @"info", nil]];
+        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[substitution valueForKeyPath:@"date.date"], 
+                                                                                    substitution.klasse.name, 
+                                                                                    substitution.lehrer, 
+                                                                                    substitution.vlehrer, 
+                                                                                    substitution.pos, 
+                                                                                    substitution.raum, 
+                                                                                    substitution.info, nil] 
+                                                                           forKeys:[NSArray arrayWithObjects:@"datum", 
+                                                                                    @"klasse", 
+                                                                                    @"lehrer", 
+                                                                                    @"vlehrer", 
+                                                                                    @"pos", 
+                                                                                    @"raum", 
+                                                                                    @"info", nil]];
         
-        [segue.destinationViewController performSelector:@selector(setSubstitution:) withObject:substitutionDictionary];
+        NSArray *substitutions = [NSArray arrayWithObjects:substitutionDictionary, nil];
+        
+        [segue.destinationViewController performSelector:@selector(setSubstitutions:) withObject:substitutions];
     }
 }
 
