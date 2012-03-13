@@ -7,36 +7,15 @@
 //
 
 #import "SubstitutionDetailsTableViewController.h"
+#import "SubstitutionDetailsCell.h"
 
 @implementation SubstitutionDetailsTableViewController
-
-/* @synthesize DatumLabel = _DatumLabel;
-@synthesize KlasseLabel = _KlasseLabel;
-@synthesize LehrerLabel = _LehrerLabel;
-@synthesize VLehrerLabel = _VLehrerLabel;
-@synthesize PosLabel = _PosLabel;
-@synthesize RaumLabel = _RaumLabel;
-@synthesize InfoLabel = _InfoLabel; */
 
 @synthesize substitutions = _substitutions;
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    NSLog(@"%@", self.substitutions);
-    
-/*    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"EEEE, dd.MM.yyyy";
-    NSString *stringFromDate = [formatter stringFromDate:[self.substitution objectForKey:@"datum"]];
-    
-    self.DatumLabel.text = stringFromDate;
-    self.KlasseLabel.text = [self.substitution objectForKey:@"klasse"];
-    self.LehrerLabel.text = [self.substitution objectForKey:@"lehrer"];
-    self.VLehrerLabel.text = [self.substitution objectForKey:@"vlehrer"];
-    self.PosLabel.text = [self.substitution objectForKey:@"pos"];
-    self.RaumLabel.text = [self.substitution objectForKey:@"raum"];
-    self.InfoLabel.text = [self.substitution objectForKey:@"info"]; */
 }
 
 #pragma mark - Table view data source
@@ -56,9 +35,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Detail Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SubstitutionDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    
+    cell.substitution = [self.substitutions objectAtIndex:indexPath.row];
     
     return cell;
 }

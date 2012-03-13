@@ -62,22 +62,13 @@
     Substitution *substitution = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutions:)]) {
         
-        NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[substitution valueForKeyPath:@"date.date"], 
-                                                                                    substitution.klasse.name, 
-                                                                                    substitution.lehrer, 
-                                                                                    substitution.vlehrer, 
-                                                                                    substitution.pos, 
-                                                                                    substitution.raum, 
-                                                                                    substitution.info, nil] 
-                                                                           forKeys:[NSArray arrayWithObjects:@"datum", 
-                                                                                    @"klasse", 
-                                                                                    @"lehrer", 
-                                                                                    @"vlehrer", 
-                                                                                    @"pos", 
-                                                                                    @"raum", 
-                                                                                    @"info", nil]];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
+        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"klasse.name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
         
-        NSArray *substitutions = [NSArray arrayWithObjects:substitutionDictionary, nil];
+        NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:[NSPredicate predicateWithFormat:@"date.date = %@", [substitution valueForKeyPath:@"date.date"]], [NSPredicate predicateWithFormat:@"klasse.name = %@", [substitution valueForKeyPath:@"klasse.name"]], nil]];
+        request.predicate = compoundPredicate;
+        
+        NSArray *substitutions = [substitution.managedObjectContext executeFetchRequest:request error:nil];
         
         [segue.destinationViewController performSelector:@selector(setSubstitutions:) withObject:substitutions];
     }
