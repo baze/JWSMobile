@@ -102,11 +102,27 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
     SchoolClass *schoolClass = [self.fetchedResultsController objectAtIndexPath:indexPath];
     if ([segue.destinationViewController respondsToSelector:@selector(setSchoolClass:)]) {
         [segue.destinationViewController performSelector:@selector(setSchoolClass:) withObject:schoolClass];
     }
+
+    if ([segue.destinationViewController respondsToSelector:@selector(setSubstitutions:)]) {
+        
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Substitution"];
+        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date.date" ascending:YES selector:@selector(compare:)]];
+        
+        NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:[NSPredicate predicateWithFormat:@"klasse.name = %@", schoolClass.name], nil]];
+        request.predicate = compoundPredicate;
+        
+        NSArray *substitutions = [schoolClass.managedObjectContext executeFetchRequest:request error:nil];
+        
+        [segue.destinationViewController performSelector:@selector(setSubstitutions:) withObject:substitutions];
+    }
 }
+
+
 
 - (void)viewDidUnload {
     [self setSearchBar:nil];

@@ -352,7 +352,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="8z8-DZ-uOk" kind="push" identifier="Show Substitutions For Class" id="jle-bx-olF"/>
+                                    <segue destination="ZMg-1P-RtW" kind="push" id="UWe-6x-WjX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -368,55 +368,6 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1411" y="318"/>
-        </scene>
-        <!--Substitutions By School Class Table View Controller-->
-        <scene sceneID="c17-Jw-e2y">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MMO-Cq-L0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="8z8-DZ-uOk" customClass="SubstitutionsBySchoolClassTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6GM-Cr-FyA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Substitution Cell" textLabel="RzO-KQ-9h9" detailTextLabel="Wce-pG-ff2" style="IBUITableViewCellStyleSubtitle" id="XRm-na-MbD">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="RzO-KQ-9h9">
-                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="Wce-pG-ff2">
-                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="ZMg-1P-RtW" kind="push" identifier="" id="G6s-CR-RUT"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="8z8-DZ-uOk" id="eca-AB-Q1t"/>
-                            <outlet property="delegate" destination="8z8-DZ-uOk" id="HQA-Fz-9GK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="FsD-gy-enp"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1851" y="318"/>
         </scene>
         <!--Substitution Details Table View Controller-->
         <scene sceneID="X8b-bH-RyD">
@@ -555,7 +506,7 @@
                     <navigationItem key="navigationItem" id="Rhd-G3-7Fb"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2379" y="-51"/>
+            <point key="canvasLocation" x="2389" y="318"/>
         </scene>
         <!--Mobile View Controller - Vertretungsplan-->
         <scene sceneID="sDh-Kg-imx">
@@ -694,9 +645,6 @@
         <class className="SubstitutionsByDayTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsByDayTableViewController.h"/>
         </class>
-        <class className="SubstitutionsBySchoolClassTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubstitutionsBySchoolClassTableViewController.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -704,6 +652,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rG6-KP-egY"/>
+        <segue reference="UWe-6x-WjX"/>
     </inferredMetricsTieBreakers>
 </document>
